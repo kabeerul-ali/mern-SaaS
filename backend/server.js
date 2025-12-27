@@ -9,8 +9,7 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5174" }));
-
+app.use(cors({ origin: process.env.FRONT_ORIGIN }));
 // ✅ REQUIRED FOR FORM-DATA
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
